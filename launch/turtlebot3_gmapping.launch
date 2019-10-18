@@ -1,0 +1,10 @@
+<launch>
+  <!-- gmapping -->
+  <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch">
+    <arg name="slam_methods" value="gmapping" />
+  </include>
+
+  <!-- コントローラ -->
+  <node name="joy_node" pkg="joy" type="joy_node" output="screen"/>
+  <node name="joy_twist" pkg="slam_launch" type="joy_twist.py" output="screen"/>
+</launch>
